@@ -30,7 +30,7 @@ for d, items in groups.items():
         tags = ''.join(f'<span>{html.escape(t)}</span>' for t in s['tags'])
         tr = '' if x['transcript'] == 'available' else '<p class="note">לא נמצא תמלול שמיש להרצאה הזו, ולכן אין סיכום מבוסס תוכן.</p>'
         cards.append(f'''<article class="lec" id="v{x['id']}"><h3>{html.escape(x['title'])}</h3>
-<p class="meta">{html.escape(x['speaker'])} · {html.escape(x['org'])} · {mins(x['duration_sec'])} דקות</p>
+<p class="meta">{html.escape(x['speaker'])}{(' · ' + html.escape(x['org'])) if x['org'] else ''} · {mins(x['duration_sec'])} דקות</p>
 <p><strong>בקצרה:</strong> {html.escape(s['tldr'])}</p><ul>{pts}</ul>
 <p class="aud"><strong>למי זה מתאים:</strong> {html.escape(s['audience'])}</p>{tr}
 <div class="tags">{tags}</div><a class="src" href="{x['url']}" rel="noopener" target="_blank">צפייה בהרצאה ביוטיוב ←</a></article>''')
