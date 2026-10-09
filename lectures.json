@@ -2229,5 +2229,181 @@
     "סדנה"
    ]
   }
+ },
+ {
+  "id": "uuwDWRbxoYo",
+  "title": "AI Writes More PRs. Who Validates Them?",
+  "speaker": "Ali-Reza Adl-Tabatabai",
+  "org": "Sonar (Gitar)",
+  "published_est": "2026-10-09",
+  "age_when_added": "0d ago",
+  "duration_sec": 694,
+  "url": "https://www.youtube.com/watch?v=uuwDWRbxoYo",
+  "transcript": "available",
+  "added": "2026-10-09",
+  "summary_he": {
+   "tldr": "שלב האימות המרכזי (CI וסקירת קוד) נהיה צוואר בקבוק כשסוכנים כותבים יותר קוד. המרצה (מייסד Gitar, שנרכשה על ידי Sonar) מתאר איך צוותים בונים אמון בסוכן סקירה בהדרגה עד מיזוג אוטומטי. הרצאה של ספק.",
+   "points": [
+    "השלב המרכזי: CI וסקירת קוד אוכפים שערי איכות, אבטחה ותאימות והם על הנתיב הקריטי לפרודקשן. ככל שההנדסה גדלה, בנייה ארוכה וסקירות אסינכרוניות בין אזורי זמן יוצרים חיכוך.",
+    "מסלול האמון שהוא מתאר: קודם סוקרים רק מקבלים הערות, אחר כך נותנים לסוכן 'שיניים' (חסימת PR), אחר כך autofix שהופך PR לירוק ומתקן כשלי CI, ולבסוף כללים שמגדירים מתי הסוכן מאשר וממזג בעצמו.",
+    "השילוב שהוא ממליץ: אימות סוכני יחד עם ניתוח תוכנית אלגוריתמי עדיף על כל אחד לבד.",
+    "כלים לצוותי פלטפורמה: התאמות, תובנות ושליטה על השלב הזה.",
+    "הנתונים והיכולות הם של הספק, ולא נבדקו כאן. קראתי פתיחה, אמצע וסוף."
+   ],
+   "audience": "צוותי הנדסה שמוצפים ב-PRs מסוכנים ושוקלים סקירה ומיזוג אוטומטיים.",
+   "tags": [
+    "code review",
+    "CI",
+    "אימות",
+    "Sonar"
+   ]
+  }
+ },
+ {
+  "id": "Emo5FGGY-wM",
+  "title": "Why 80% Reliability Isn't Good Enough",
+  "speaker": "Felipe Blanes",
+  "org": "Amazon AGI Lab",
+  "published_est": "2026-10-09",
+  "age_when_added": "0d ago",
+  "duration_sec": 1065,
+  "url": "https://www.youtube.com/watch?v=Emo5FGGY-wM",
+  "transcript": "available",
+  "added": "2026-10-09",
+  "summary_he": {
+   "tldr": "מנהל תוכניות ב-Amazon AGI Lab מספר איך בנו evals לכלי Nova (אוטומציה של דפדפן), ומה למדו: ה-evals צריכים לשקף את מה שהלקוח באמת צריך ולהתעדכן כל הזמן, כי אמון הלקוח נשבר אחרי שיפור לא מספיק.",
+   "points": [
+    "הרקע: Nova הושק כ-research preview במרץ של השנה הקודמת כדי לאסוף משוב ככל האפשר, והוא כלי לבניית סוכני דפדפן.",
+    "שלבים בתהליך עם לקוחות: משתמשים מוקדמים, מעבר לקנה מידה, זיהוי use case מוביל ('הגיבור') שכולם משתמשים בו, ואחר כך פערי מוצר שמכוונים מה לבנות.",
+    "'מצוק האמון' (trust cliff): מושג שהוא טבע. אמינות בינונית מספיקה להדגמה אבל לא ללקוח שמסתמך עליה. לא קראתי את כל ההסבר.",
+    "שני רעיונות מרכזיים בסוף: evals חייבים לשקף מה שהלקוח מתעניין בו ולא מה שאנחנו חושבים, ו-evals אינם נבנים פעם אחת אלא הם גלגל תנופה שמתפתח עם מסע הלקוח.",
+    "המרצה מציג את הניסיון של הצוות שלו, ולא נבדקו מספרים. קראתי פתיחה, אמצע וסוף."
+   ],
+   "audience": "מי שבונה evals למוצר סוכני ורוצה לחבר אותם לצורכי לקוחות אמיתיים.",
+   "tags": [
+    "evals",
+    "אמון",
+    "סוכני דפדפן",
+    "Amazon"
+   ]
+  }
+ },
+ {
+  "id": "3XI90A3ENSg",
+  "title": "How a Remote Company Builds AI Fluency",
+  "speaker": "Em Shreve",
+  "org": "Automattic",
+  "published_est": "2026-10-08",
+  "age_when_added": "1d ago",
+  "duration_sec": 933,
+  "url": "https://www.youtube.com/watch?v=3XI90A3ENSg",
+  "transcript": "available",
+  "added": "2026-10-09",
+  "summary_he": {
+   "tldr": "Automattic (WordPress.com, Tumblr) מתארת תוכנית העצמה פנימית ל-AI: שבועיים של לימוד מעמיק במפגש פיזי, workshops, שיעורי 'ride along' ותשתית משותפת של skills ו-MCP. המסר: חייבים לתת זמן אמיתי ללמוד ולהתנסות.",
+   "points": [
+    "הרקע: חברה מבוזרת עם מעל 1,400 עובדים ב-82 מדינות.",
+    "ההימור: לא מספיק לתת כלים. מריצים תוכניות enablement של שבועיים בהשתתפות פיזית, עם 50% למידה מונחית (צוות L&D וצוות AI) והשאר לעבודה על דברים אמיתיים.",
+    "מי שסיים מוביל workshops אזוריים משלו, והם עשו כ-10 כאלה.",
+    "'AI ride alongs': סדנאות קטנות שבהן רואים אדם בתפקיד דומה עובד עם כלי. לדבריה זה קל להבנה יותר מהסבר על מושגים.",
+    "תשתית משותפת: אנשים יוצרים ומשתפים skills, ובונים זה על עבודתו של זה. דוגמה מעובדת תמיכה (לא מהנדסת) שנהייתה בטוחה יותר אחרי התוכנית.",
+    "התוצאה מוצגת באופן איכותני, בלי מדדים כמותיים בתמלול. קראתי פתיחה, אמצע וסוף."
+   ],
+   "audience": "מנהלי למידה והנדסה שמתכננים הטמעת AI בארגון גדול.",
+   "tags": [
+    "הטמעת AI",
+    "הכשרה",
+    "ארגון",
+    "Automattic"
+   ]
+  }
+ },
+ {
+  "id": "NaOkR3VSfR4",
+  "title": "Brains vs Hands: How to Run AI Agents Safely in Production",
+  "speaker": "Viren Baraiya",
+  "org": "Orkes (Conductor)",
+  "published_est": "2026-10-08",
+  "age_when_added": "1d ago",
+  "duration_sec": 1010,
+  "url": "https://www.youtube.com/watch?v=NaOkR3VSfR4",
+  "transcript": "available",
+  "added": "2026-10-09",
+  "summary_he": {
+   "tldr": "העיקרון: הסוכן הלא-דטרמיניסטי מתכנן מה לעשות, וה-harness (קוד דטרמיניסטי) מבצע. כך אפשר לקבל חזרתיות, בטיחות וביקורת בפרודקשן. הדוגמה רצה על Conductor, מנוע workflow בקוד פתוח של Orkes (הספק).",
+   "points": [
+    "המסר המרכזי של ההרצאה לדבריו: האחריות של הסוכן היא לתכנן את הצעד הבא ולא לבצע. ה-harness מבצע, והוא קוד דטרמיניסטי שיודע מה כרוך בביצוע.",
+    "דוגמה: סוכן SRE אומר שהאשכול לא בריא וצריך להפעיל מחדש. ה-harness מחליט איך להפעיל מחדש אשכול, בתהליך קבוע ואחיד.",
+    "הדגמה בת כמה איטרציות: באיטרציה השנייה הסוכן החליט לא לבצע rollback כי הוא כבר נעשה באיטרציה הראשונה.",
+    "היתרון: הרצות ארוכות, חזרה על כשלים וקביעות בפרודקשן.",
+    "Conductor הוא קוד פתוח, ו-Orkes מוכרת גרסה ארגונית. תומך בסוכני LangChain, OpenAI ואחרים. קראתי פתיחה, אמצע וסוף."
+   ],
+   "audience": "מי שמעלה סוכנים לפרודקשן ושואל איפה עובר הגבול בין תכנון לביצוע.",
+   "tags": [
+    "harness",
+    "workflow",
+    "בטיחות",
+    "Orkes"
+   ]
+  }
+ },
+ {
+  "id": "F0TNSmbo5hE",
+  "title": "From Vibes to Production: Evaluating and Shipping AI Agents That Work 201",
+  "speaker": "Laurie Voss",
+  "org": "Arize AI",
+  "published_est": "2026-10-05",
+  "age_when_added": "4d ago",
+  "duration_sec": 2537,
+  "url": "https://www.youtube.com/watch?v=F0TNSmbo5hE",
+  "transcript": "available",
+  "added": "2026-10-09",
+  "summary_he": {
+   "tldr": "סדנה בהמשך ל-101 על סגירת מעגל פיתוח התוכנה אוטומטית: מפעילים tracing בעזרת open inference, שולחים traces ל-Arize ומשתמשים ב-skills בריפו כדי להריץ evals וניתוח. הסדנה של ספק ומתוך המוצר שלו.",
+   "points": [
+    "הפתיחה: הם מבקשים מהמשתתפים לשכפל ריפו מראש. הסדנה מסתמכת על skills שמותקנים בו (ספריית OpenAI agents SDK).",
+    "מה שהוא מציג: OpenAI agents SDK כבר מצויד ב-open inference, שהוא סטנדרט פתוח לתצפית על יישומי AI, ולכן מספיק להפנות את ה-traces למפתח API ונקודת קצה של Arize ולראות אותם באפליקציה.",
+    "שאלות בסוף על Signal: כלי שמציע evals ומריץ סוויטת evals פנימית משלו שנעקבת ב-Arize, עם LLM judges שמעריכים אם יצר PR טוב. הוא אינו יוצר evaluators בעצמו כי evaluators עולים זמן וכסף, אלא מציע.",
+    "זהו המסלול של 'סגירת מעגל SDLC': traces, הערכה, ושיפור.",
+    "קראתי פתיחה, חלק מהאמצע וחלק מהסוף. לא עברתי על כל התרגילים. סדנה של ספק."
+   ],
+   "audience": "מי שרוצה להוסיף tracing ו-evals לסוכן קיים ולראות זרימה על Arize.",
+   "tags": [
+    "evals",
+    "tracing",
+    "open inference",
+    "Arize",
+    "סדנה"
+   ]
+  }
+ },
+ {
+  "id": "hfEczxdNyvU",
+  "title": "Advanced Workshop: Mastering AI Observability",
+  "speaker": "Doug Guthrie",
+  "org": "Braintrust",
+  "published_est": "2026-10-06",
+  "age_when_added": "3d ago",
+  "duration_sec": 6697,
+  "url": "https://www.youtube.com/watch?v=hfEczxdNyvU",
+  "transcript": "available",
+  "added": "2026-10-09",
+  "summary_he": {
+   "tldr": "סדנה של Braintrust על תצפית ב-AI: איך מסווגים traces (facets, topic maps, scores) כדי לזהות כשלים, ואיך מתחילים עם ה-CLI של Braintrust. סדנה של ספק, וההכשרה כאן מבוססת על דגימה בלבד.",
+   "points": [
+    "מושגי יסוד: scores (evaluators למדידת פלט הסוכן ולמצבי כשל) ו-facets (למשל issues, tasks, sentiment או facets משלכם).",
+    "צינור הניתוח: מעבדים את ה-trace, מסכמים, יוצרים embedding של הסיכום, ובונים 'topic map' (פיזור נקודות) שמאפשר לתייג ולסווג traces.",
+    "שאלות מהקהל: איך מטפלים בשיחות ארוכות. יש הגדרות שפועלות על traces או רק אחרי פרק זמן. לדבריו רוב הלקוחות הגדולים משתמשים בגרסה self-hosted.",
+    "חלק מעשי: התקנת CLI של Braintrust, כניסה (OAuth) לארגון והרצת פקודות הגדרה.",
+    "הכיסוי כאן חלקי מאוד: התמלול שנמשך הוא כ-50 אלף תווים מתוך סדנה של כמעט שעתיים, וקראתי דגימות בלבד. לא ניתן לסכם מה נאמר בחלק הסופי."
+   ],
+   "audience": "מי שמתכנן תצפית על סוכנים ב-Braintrust ורוצה סקירה של הרעיונות. לא תחליף לצפייה בסדנה.",
+   "tags": [
+    "תצפית",
+    "evals",
+    "Braintrust",
+    "סדנה"
+   ]
+  }
  }
    ]
