@@ -2500,5 +2500,70 @@
     "Sentry"
    ]
   }
+ },
+ {
+  "id": "3wj6sgbi1YA",
+  "title": "Designing CLIs for Agents, Not Humans — Pedro Lopez, Airbyte",
+  "speaker": "Pedro Lopez",
+  "org": "Airbyte",
+  "published_est": "2026-10-09",
+  "age_when_added": "today",
+  "duration_sec": 1100,
+  "url": "https://www.youtube.com/watch?v=3wj6sgbi1YA",
+  "transcript": "available",
+  "added": "2026-10-09",
+  "summary_he": {
+   "tldr": "Airbyte חושפת את שכבת ההקשר והפעולה שלה לסוכנים דרך MCP ודרך CLI. ההרצאה מסכמת לקחים מעשיים לשניהם: מעט כלים וגילוי הדרגתי ב-MCP, ו-JSON פנימה והחוצה, עקביות ו-skills שמגיעים עם ה-CLI.",
+   "points": [
+    "הרקע: Airbyte התחילה כתקן קוד פתוח להעברת נתונים וכיום מציעה שכבת נתונים ופעולה לסוכנים, עם context store (אינדקס מותאם לחיפוש מעל כלים כמו Zendesk, Stripe ו-GitHub). הגישה אליו דרך SDK, ממשק web, MCP ו-CLI.",
+    "MCP ו-CLI הם שכבות דקות מעל הפלטפורמה ולא מימוש מחדש שלה. הם נבנים על מפרטי OpenAPI כמקור אמת, כי הפלטפורמה משתנה יותר מעשר פעמים ביום.",
+    "ב-MCP: להשאיר מעט כלים. לביצוע מול מחבר יש רק שניים, describe (סכמת השאילתה) ו-execute (קריאה, כתיבה ומחיקה), עם גילוי הדרגתי ותיאורי כלים קצרים, במקום כלי לכל ישות ופעולה.",
+    "אימות ב-MCP: OAuth. המפרט כבד בו וה-clients המרכזיים נשענים עליו (בהגדרת מחבר מותאם ב-Claude אין בכלל שדה bearer token). משתמשים מצפים להתחברות ארוכה כמו באפליקציית מובייל, ולכן צריך סשנים offline נפרדים מאלה של אפליקציית ה-web.",
+    "Elicitation במצב URL היה מתאים לחיבור כלים צד שלישי בלי חשיפת סיסמאות, אבל התמיכה ב-clients לא אחידה (Claude Desktop אמר שהוא לא תומך), אז הם בנו מנגנון משלהם.",
+    "ב-CLI: JSON פנימה ו-JSON החוצה. סוכנים בונים קלט מורכב טוב יותר ב-JSON מאשר בדגלים, והפלט מאפשר pipes, למשל jq, וחיתוך תשובות ארוכות.",
+    "עקביות: מבנה noun-verb זהה בכל המשאבים (connectors list, workspace list). אם סוכנים חוזרים על אותה טעות בפקודה, שווה להפוך אותה לחוזה ה-CLI.",
+    "ה-skill נשלח עם ה-CLI: בלעדיו הסוכן לא יודע שהכלי קיים. כדאי לפצל אותו לקובץ ראשי ולקבצי reference כדי לא להעמיס הקשר. כשסוכן מפעיל CLI אין אדם שיענה לפרומפטים, ולכן פרטי אימות עוברים בדגלים, משתני סביבה וקובצי קונפיג.",
+    "השוואה: MCP מתאים למשתמשים לא טכניים, לאב-טיפוס ולדוחות חד-פעמיים, אבל יש מגבלות (ב-Claude 2KB לתיאורי שרת וכלי, מגבלות זמן ריצה). CLI מתאים למשימות ארוכות ופלט גדול, אבל דורש ניהול גרסאות ובלי מגבלות הסוכן עלול להסתובב בלולאות."
+   ],
+   "audience": "מפתחים שבונים MCP או CLI שסוכנים משתמשים בהם, או מחברים סוכנים למערכות SaaS.",
+   "tags": [
+    "MCP",
+    "CLI",
+    "סוכנים",
+    "Airbyte"
+   ]
+  }
+ },
+ {
+  "id": "9WiBJRO84yY",
+  "title": "Building on the Codex Harness — Dominik Kundel, OpenAI",
+  "speaker": "Dominik Kundel",
+  "org": "OpenAI",
+  "published_est": "2026-10-09",
+  "age_when_added": "today",
+  "duration_sec": 1088,
+  "url": "https://www.youtube.com/watch?v=9WiBJRO84yY",
+  "transcript": "available",
+  "added": "2026-10-09",
+  "summary_he": {
+   "tldr": "Dominik Kundel מ-OpenAI מציג את Codex app server: הפרוטוקול (JSON-RPC) שעוטף את ה-harness של Codex ומאפשר לבנות עליו ממשקים משלך. הוא מראה איך מתאימים את הסוכן, איך מפעילים את השרת, ובדמו חי מריץ Codex בתוך המשחק Doom.",
+   "points": [
+    "ה-app server הוא פרוטוקול בסגנון JSON-RPC סביב ה-harness, בקוד פתוח (Apache 2). הוא מפעיל את אפליקציית Codex, תוסף VS Code ושילובים של צד שלישי כמו Xcode, JetBrains ופרויקטים בקוד פתוח, ואפילו תוסף Codex בתוך Claude Code. דומה ל-ACP, אבל נותן שליטה מפורטת יותר ב-harness.",
+    "אפשר לחבר ספק מודל אחר אם יש לו API תואם Responses, יש הגדרות נוחות ל-LM Studio ו-Ollama. ובכניסה עם ChatGPT המשתמשים מביאים מנוי משלהם ושימוש נספר מול מגבלות Codex שלהם.",
+    "בדמו הוא מציג inspector שמיירט את ההודעות בין האפליקציה לשרת: פתיחת threads, קריאת קונפיגורציה, הודעות delta בזמן סטרימינג. יש מעל 120 הודעות client, למשל אתחול, תהליכי thread ו-turn, הגדרת goal, רשימת plugins, חיפוש ושינוי קבצים.",
+    "התאמת הסוכן: developer instructions נוספות מעל system prompt של Codex (מומלץ במקום לכתוב system prompt חדש, כי כוונון הפרומפט למודלים כבר נעשה), ו-dynamic tools שאפשר לסמן כ-deferred loading כדי שיימצאו דרך tool search ולא יעמיסו על החלון. אפשר גם לשנות בכל thread מודל, ספק, ומגבלות sandbox (רשת וקבצים).",
+    "הפעלה: ה-app server נמצא באותו בינארי כמו ה-Codex CLI, ואפשר להפעיל אותו ב-stdio או ב-websocket. אפשר לייצר bindings ב-TypeScript או JSON schema לגרסה הספציפית, כי הפרוטוקול משתנה בין גרסאות. יש גם Python SDK שמנהל את מחזור החיים, ולטענתו Codex עצמו טוב ביישום הפרוטוקול כשמפנים אותו לתיעוד.",
+    "הדמו: אפליקציית Electron שמריצה Doom (Cloudflare Doom Wasm) עם Codex מוטמע. דרך dynamic tools הסוכן קורא ומשנה חימוש ובריאות, וגם מריץ shell באותה סביבה.",
+    "app server לעומת codex exec: exec לא אינטראקטיבי ומתאים לסקריפטים ול-CI (למשל תיקון PR אוטומטי). כשבונים client מלא או מפעילים הרבה threads במקביל (eval harness, goal) מתאים app server.",
+    "שלוש המלצות: לשלוח את גרסת ה-harness שלך עם המוצר ולא להסתמך על ה-CLI המותקן אצל המשתמש (שינויים שוברים, גרסאות ישנות). לחשוף פונקציות חדשות כ-deferred. ולהוסיף developer instructions ולא להחליף את הבסיס."
+   ],
+   "audience": "מפתחים שרוצים לבנות ממשק או מוצר על agent harness קיים, בלי לבנות סוכן מאפס.",
+   "tags": [
+    "Codex",
+    "app server",
+    "Harness",
+    "OpenAI"
+   ]
+  }
  }
    ]
