@@ -28,7 +28,7 @@ for d, items in groups.items():
         s = x['summary_he']
         pts = ''.join(f'<li>{html.escape(p)}</li>' for p in s['points'])
         tags = ''.join(f'<span>{html.escape(t)}</span>' for t in s['tags'])
-        tr = '' if x['transcript'] == 'available' else '<p class="note">לא נמצא תמלול שמיש להרצאה הזו, ולכן אין סיכום מבוסס תוכן.</p>'
+        tr = '' if x['transcript'] == 'available' else ('<p class="note">התמלול חלקי; הסיכום מכסה רק את התוכן שהתקבל.</p>' if x['transcript'] == 'partial' else '<p class="note">לא נמצא תמלול שמיש להרצאה הזו, ולכן אין סיכום מבוסס תוכן.</p>')
         cards.append(f'''<article class="lec" id="v{x['id']}"><h3>{html.escape(x['title'])}</h3>
 <p class="meta">{html.escape(x['speaker'])}{(' · ' + html.escape(x['org'])) if x['org'] else ''} · {mins(x['duration_sec'])} דקות</p>
 <p><strong>בקצרה:</strong> {html.escape(s['tldr'])}</p><ul>{pts}</ul>
