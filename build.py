@@ -9,7 +9,7 @@ css = open('base.css').read() + """
 .tags span{display:inline-block;border:1px solid #3a3f48;border-radius:999px;padding:2px 10px;margin:0 0 6px 6px;font-size:.78rem;color:#c9ced6}
 .lec ul{padding-right:20px}.lec li{margin:6px 0}.aud{border-top:1px solid #24282f;margin-top:12px;padding-top:10px;color:#c9ced6}
 .src{display:inline-block;margin-top:10px;color:#F7931A;text-decoration:none;font-weight:600}
-.daytitle{margin-top:36px}.note{color:#9aa0a8;font-size:.9rem}
+.daytitle{margin-top:36px}.daytitle .note{display:block;border:0;background:none;box-shadow:none;padding:0;margin:8px 0 0}.note{color:#9aa0a8;font-size:.9rem}
 .toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.toc a{border:1px solid #24282f;border-radius:999px;padding:6px 14px;font-size:.85rem;color:#9aa0a8;text-decoration:none}
 """
 L = json.load(open('lectures.json'))
@@ -41,7 +41,7 @@ page = f'''<!DOCTYPE html>
 <header class="top"><div class="wrap"><a class="brand" href="https://rkinstinct.github.io/data-ai-hub/">DATA<span style="color:#F7931A">&amp;</span>AI <b>/ AI Engineer</b></a></div></header>
 <main id="main"><div class="hero"><div class="wrap"><div class="eyebrow">AI ENGINEER · סיכומי הרצאות</div><h1>AI Engineer בעברית</h1>
 <p class="lead">סיכום בעברית של כל הרצאה שעולה לערוץ <a href="{CH}" rel="noopener" target="_blank" style="color:#F7931A">AI Engineer</a> ביוטיוב. כל סיכום נכתב מהתמלול של ההרצאה עצמה, מהחדשות לישנות, וקישור למקור מצורף לכל הרצאה.</p>
-<p class="note">{n} הרצאות עד כה. תאריכי הפרסום משוערים (נגזרו מגיל ההעלאה שהוצג ביוטיוב) ועשויים לסטות ביום. הרצאות ארוכות (סדנאות ומעל 25 דקות) עדיין לא סוכמו. חלק מההרצאות הן הצגות של חברות, וזה מצוין בסיכום.</p>
+<p class="note">{n} הרצאות עד כה. תאריכי הפרסום משוערים (נגזרו מגיל ההעלאה שהוצג ביוטיוב) ועשויים לסטות ביום. חלק מההרצאות הארוכות והסדנאות עדיין לא סוכמו. חלק מההרצאות הן הצגות של חברות, וזה מצוין בסיכום.</p>
 <div class="toc">{''.join(toc)}</div></div></div>
 {''.join(body)}</main>
 <footer><div class="wrap"><span>סיכומים עצמאיים, לא פרסום רשמי של AI Engineer. התוכן שייך ליוצרים המקוריים.</span></div><p class="rights-line" style="text-align:center;margin:18px auto 0;padding:0 16px;font-size:.92em;opacity:.9;width:100%">© כל הזכויות שמורות לראובן קזורר</p></footer></body></html>'''
