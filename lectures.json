@@ -7142,5 +7142,158 @@
     "סקייל"
    ]
   }
+ },
+ {
+  "id": "dKcTBQzR7jI",
+  "title": "Skill issue: stop deploying vision language models, use them with Skills",
+  "speaker": "Merve Noyan",
+  "org": "Hugging Face",
+  "published_est": "2026-10-24",
+  "age_when_added": "כ-יום (משוער)",
+  "duration_sec": 1154,
+  "url": "https://www.youtube.com/watch?v=dKcTBQzR7jI",
+  "transcript": "available",
+  "added": "2026-10-24",
+  "summary_he": {
+   "tldr": "חברת Hugging Face טוענת שיש לבנות אפליקציות ראייה מקצה לקצה עם מודלים קטנים יעודיים במקום לפרוס VLM לכל דבר: תייגו עם VLM כמו Qwen, אמנו RF-DETR זעיר, וקבלו real-time ודיוק ש-VLM לא ייתן.",
+   "points": [
+    "הטענה: מפתחים מנסים להשתמש ב-VLM לכל משימת ראייה, אבל VLM לעולם לא ייתן real-time (30-40 FPS על חומרה חלשה) ולא יהיה robust כמו מודל מאומן ייעודית.",
+    "RF-DETR מנצח VLM בדיטקשן - והיא מוכיחה זאת בשני ניסויים: זיהוי תמרורים מול ground truth, ופרסינג מסמכים (תמונות, טבלאות, חתימות) כמשימה חדשה לגמרי בלי תוויות.",
+    "המתודולוגיה: מתייגים עם Qwen (pseudo-annotations), מאמנים RF-DETR זעיר על התיוגים, ומשווים מול ה-ground truth. יש פער מסוים אבל הוא צפוי - המודל למד מ-Qwen.",
+    "בפרסינג מסמכים המודל אפילו הכליל מעבר למורה: הוא מצא חתימה שה-VLM שהתייג פספס.",
+    "על הרישיונות: YOLO הוא AGPL ולכן בעייתי לשימוש מסחרי - בדקו רישיון לפני שבונים מוצר.",
+    "העלות: אימון על L4 בודד, והמודל כל כך קטן שאפשר גם מקומית. המסקנה: VLM הוא כלי תיוג ויצירת קונטקסט, לא רכיב הפרודקשן."
+   ],
+   "audience": "מפתחי computer vision, וכל מי שמתקן VLM למשימות דיטקשן או פרסינג בפרודקשן.",
+   "tags": [
+    "computer vision",
+    "RF-DETR",
+    "VLM",
+    "אימון",
+    "רישיונות"
+   ]
+  }
+ },
+ {
+  "id": "RQi7x-navxU",
+  "title": "Building the Document Context Layer for AI Agents",
+  "speaker": "Jerry Liu",
+  "org": "LlamaIndex",
+  "published_est": "2026-10-24",
+  "age_when_added": "כ-יום (משוער)",
+  "duration_sec": 1264,
+  "url": "https://www.youtube.com/watch?v=RQi7x-navxU",
+  "transcript": "available",
+  "added": "2026-10-24",
+  "summary_he": {
+   "tldr": "מייסד-שותף ומנכ\"ל LlamaIndex מפרק את RAG ב-2026 לשניים: agent harness + שכבת קונטקסט של מסמכים. הלקח: גם קובץ DOCX נאייטיבי דורש פרסינג לפורמט שניתן לפענוח - ושילוב של pipeline היוריסטי עם VLM מנצח כל אחד לחוד.",
+   "points": [
+    "LlamaIndex התחילה כ-RAG framework ב-2023 והיום רואה עצמה תשתית המסמכים לסוכנים: הפלטפורמה שמאפשרת לסוכנים לקרוא ולפעול על אוצרות המסמכים הארגוניים.",
+    "RAG ב-2026 מתפרק ל-harness (הסוכן והלולאה שלו) ושכבת קונטקסט - ואיכות שכבת הקונטקסט היא ההבדל בין סוכן שעובד לסוכן שלא.",
+    "למה קובץ נאייטיבי לא מספיק: גם DOCX דורש שהסוכן יסיק מבנה - צריך להרים מטא-דאטה של פורמט וסמנטיקה, להתעלם מתגיות, ולרנדר את המסמך כך שהסוכן יראה את מבנה העמוד. פרסינג לפורמט interpretable נותן uplift משמעותי.",
+    "שתי גישות מסורתיות: pipeline היוריסטי (PyPDF, PyMuPDF - אשכולות טקסט, טבלאות, פסקאות) ו-VLM one-shot. השני עובד סביר אבל מזייף בעמודי טקסט, יקר, וחסר סמנטיקה ו-grounding.",
+    "הכיוון שלהם: לשלב את שתיהן - דיוק מבני של pipeline עם הבנה ויזואלית של VLM."
+   ],
+   "audience": "בוני סוכנים על מסמכים ארגוניים, מהנדסי RAG, וכל מי שצריך document AI בפרודקשן.",
+   "tags": [
+    "RAG",
+    "LlamaIndex",
+    "מסמכים",
+    "סוכנים",
+    "parsing"
+   ]
+  }
+ },
+ {
+  "id": "c1hGBoWw20A",
+  "title": "Weight Folding, CUDA Streams, and the Bug That Made My Model Speak Backwards",
+  "speaker": "Filip Makraduli",
+  "org": "",
+  "published_est": "2026-10-24",
+  "age_when_added": "כ-יום (משוער)",
+  "duration_sec": 1038,
+  "url": "https://www.youtube.com/watch?v=c1hGBoWw20A",
+  "transcript": "available",
+  "added": "2026-10-24",
+  "summary_he": {
+   "tldr": "שתי שורות אלגברה שהופכות RMS norm לזול ומהיר יותר, ואיך באג race condition בין CUDA streams גרם למודל \"לדבר backwards\" - ואיך סנכרון מפורש של ה-streams תיקן את זה.",
+   "points": [
+    "הנייר: שיפור ל-RMS norm בטרנספורמים (נכתב עם Niels Graf), ברוח flash attention - למזער תקשורת זיכרון. שכבת ה-norm כמעט לא עושה חשבון, אבל נטל ה-wall-time שלה גדול ובצעד decode היא יכולה להתחיל לא מעט מהזמן.",
+    "הטריק הראשון: weight folding - לקפל את ה-scaling של ה-norm לתוך המשקלים מראש, בלי לגעת בזמן ריצה. בריפו יש פקודת \"flashify\" שעושה את זה.",
+    "הבאג: במהלך generations ארוכות המודל פלט שטויות. הסיבה - join מרומז בין CUDA streams: ה-post-scale קרא ערך ישן מ-buffer כי אחד ה-streams עוד לא סיים את כפל המטריצות.",
+    "התיקון: join מפורש - מסמנים סוף לכפל המטריצות וסוף ל-RMS, וגורמים ל-post-scale לחכות לשני ה-streams. אחרי זה המודל \"דיבר קדימה\" שוב.",
+    "החלק השני של הנייר דורש עבודת kernel אמיתית, לא רק סקריפט. הבדיקות בעיקר על מודלי Llama אבל העיקרון תקף גם לארכיטקטורות אחרות."
+   ],
+   "audience": "מהנדסי inference ו-kernels, וחוקרי ארכיטקטורה שרוצים לסחוט ביצועים מ-norm layers.",
+   "tags": [
+    "CUDA",
+    "inference",
+    "RMS norm",
+    "kernels",
+    "באגים"
+   ]
+  }
+ },
+ {
+  "id": "btxG75rNJC4",
+  "title": "Two Bugs That Hid in Plain Sight: A vLLM Debugging Detective Story",
+  "speaker": "Asaf Gardin & Yuval Belfer",
+  "org": "AI21",
+  "published_est": "2026-10-24",
+  "age_when_added": "כ-יום (משוער)",
+  "duration_sec": 1086,
+  "url": "https://www.youtube.com/watch?v=btxG75rNJC4",
+  "transcript": "available",
+  "added": "2026-10-24",
+  "summary_he": {
+   "tldr": "שני חוקרי AI21 מספרים איך איתרו באגים שקטים בשרת: גיבריש בביטחון גבוה, בלי קריסה ובלי אזהרה. הבאג הראשון - בקשה \"מתחזה\" שביצעה decode לפני prefill ב-Mamba וקראה state מיושן של בקשות קודמות.",
+   "points": [
+    "הסיטואציה: המודל מחזיר גיבריש בביטחון מלא. לא בעיית איכות ולא קריסה - בעיית הנדסה טהורה, והקשה מסוגה.",
+    "הרקע: AI21 אימנה את Jamba, ארכיטקטורה היברידית של transformer ו-Mamba (SSM). באגים הופיעו באימון GRPO (סוג של RL) ובסרבינג.",
+    "הבאג הראשון - \"הבקשה המתחזה\": הם חדרו ל-forward pass עם תנאי על ה-request ID הבעייתי וגילו שה-scheduler שלח אותו ל-decode לפני prefill.",
+    "למה זה קטלני דווקא ב-Mamba: ב-attention כותבים את ה-KV לפני שקוראים, ולכן דאטה מיושן פשוט נדרס. ב-Mamba קודם קוראים את ה-state ואז מחשבים מעליו - אז decode מוקדם הריץ חישוב על state של בקשות קודמות, ויצא גיבריש. ה-kernels לא טעו; הם נקראו בזמן הלא נכון על הבקשה הלא נכונה.",
+    "שיטת העבודה: להעביר context (forward context עם request ID) עד לקרנלים, לשם breakpoint על הבקשה החשודה, ולבחון את כל המטא-דאטה - במקום לנחש.",
+    "יש גם באג שני בסיפור (שני באגים שהסתתרו באור היום), וכל התחקיר מתועד בבלוג שפרסמו."
+   ],
+   "audience": "מהנדסי serving ו-inference, צוותי אימון RL, וכל מי שמפעיל מודלים היברידיים בפרודקשן.",
+   "tags": [
+    "vLLM",
+    "דיבאגינג",
+    "Mamba",
+    "serving",
+    "AI21"
+   ]
+  }
+ },
+ {
+  "id": "Hvb2LfMH58c",
+  "title": "The Frontier AI Inference Cloud for Agents",
+  "speaker": "Byung-Gon (Gon) Chun",
+  "org": "FriendliAI",
+  "published_est": "2026-10-24",
+  "age_when_added": "כ-יום (משוער)",
+  "duration_sec": 899,
+  "url": "https://www.youtube.com/watch?v=Hvb2LfMH58c",
+  "transcript": "available",
+  "added": "2026-10-24",
+  "summary_he": {
+   "tldr": "מייסד FriendliAI (הצוות שהמציא continuous batching) על inference לסוכנים: ב-2026 סוכנים בפרודקשן מסיבי ומודלים פתוחים ברמת חזית משנים את הכלכלה. ארבעה עמודים: prefix caching, ניהול KV cache, routing מודע-cache ואופטימיזציה מודעת-סוכן.",
+   "points": [
+    "שתי מגמות: סוכני AI הולכים אקספוננציאליים בתוכנה ובעבודת ידע, ומודלים פתוחים הגיעו לרמת החזית - אפשר להריץ סוכנים באיכות חזית בעלות טוקנים נמוכה. דוגמה: אותה משימת קודינג (משחק tower defense) על מודל פתוח מול סגור.",
+    "המטרה החדשה: latency של המשימה כולה, לא של בקשה בודדת. סוכן עושה צעדים רבים עם prefix משותף גדול.",
+    "prefix caching: מחשבים KV ל-prefix המשותף פעם אחת ומשתמשים בו מחדש בכל צעד - משפר time-to-first-token וחוסך מחשוב, וערכו גדל עם אורך המשימה.",
+    "ניהול KV cache: אריזה חסכנית של קונטקסטים פעילים בזיכרון ה-GPU, quantization ל-KV, caching היררכי (GPU, host, דיסק) ו-distributed caching כך ש-prefix אחד משרת כמה רפליקות.",
+    "routing מודע-cache: מאזן עומסים נאיבי הורס cache locality; router חכם שולח בקשה לרפליקה שכבר מחזיקה את ה-prefix הנכון.",
+    "מתחת לכל זה: אופטימיזציות מודל - sparse attention לקונטקסט ארוך, קרנלים מהירים ו-serving עמיד."
+   ],
+   "audience": "מהנדסי inference ותשתיות, וכל מי שמריץ סוכנים בסקייל ומשלם על טוקנים.",
+   "tags": [
+    "inference",
+    "KV cache",
+    "prefix caching",
+    "סוכנים",
+    "תשתיות"
+   ]
+  }
  }
 ]
