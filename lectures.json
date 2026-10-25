@@ -7636,5 +7636,99 @@
     "production"
    ]
   }
+ },
+ {
+  "id": "DZ24Xbm9Joc",
+  "title": "How to Build Financial Agents That Work Across the Web",
+  "speaker": "Jay Sahnan & Arik Bird",
+  "org": "Browserbase",
+  "published_est": "2026-10-25",
+  "age_when_added": "היום",
+  "duration_sec": 1178,
+  "url": "https://www.youtube.com/watch?v=DZ24Xbm9Joc",
+  "transcript": "available",
+  "added": "2026-10-25",
+  "summary_he": {
+   "tldr": "איך נראים סוכני דפדפן פיננסיים בפרודקשן: Browserbase מספקת דפדפנים בענן שהסוכן שולט בהם, וחברות כמו Ramp ו-Bill משתמשות בהם כדי לבצע פעולות אמיתיות בפורטלים שונים - Ramp חסכה מעל 30,000 שעות עבודה ידנית והגדילה סקייל פי 5.",
+   "points": [
+    "מהו browser agent: סוכן שצריך לגשת לרשת, לקרוא מידע ולבצע פעולות בדפים אמיתיים - במקום שיהיה לו API לכל שירות, הוא עובד כמו בן אדם מול הדפדפן.",
+    "הדגמה חיה: דפדפנים בענן של Browserbase נפתחים מול הקהל, ואפשר לשלוט בהם דרך iframe - ללחוץ, להזיז ולבצע פעולות.",
+    "מקרה Ramp: אלפי סוכני דפדפן מבצעים הזנת נתונים שבעבר נעשתה ידנית - מעל 30,000 שעות אדם שנחסכו וסקייל שגדל פי 5.",
+    "מקרה Bill: עיבוד תשלומים מול אלפי ספקים. האתגר הוא שכל פורטל שונה - תהליך checkout שונה, טופס תשלום שונה - וסוכן דפדפן מתמודד עם השונות הזו בלי אינטגרציה ייעודית לכל ספק.",
+    "כלים להתחלה: תבנית לעבודה מול SEC וגישה ל-copy prompt באתר שלהם שמכין את רוב העבודה מול הסוכן שלכם."
+   ],
+   "audience": "בוני סוכנים לתחום הפיננסי/תפעולי, צוותי אוטומציה שצריכים לעבוד מול פורטלים ללא API, וכל מי שסקרן איך browser agents נראים בסקייל אמיתי.",
+   "tags": [
+    "browser-agents",
+    "Browserbase",
+    "פיננסים",
+    "אוטומציה",
+    "agents"
+   ]
+  }
+ },
+ {
+  "id": "dZgA6btnb_s",
+  "title": "Do Not Let Models Invent Numbers",
+  "speaker": "Vinoo Ganesh",
+  "org": "Kepler",
+  "published_est": "2026-10-25",
+  "age_when_added": "היום",
+  "duration_sec": 1258,
+  "url": "https://www.youtube.com/watch?v=dZgA6btnb_s",
+  "transcript": "available",
+  "added": "2026-10-25",
+  "summary_he": {
+   "tldr": "איך Kepler בונה מערכת פיננסית שהמודל לא ממציא בה מספרים: retrieval היברידי (וקטורים + BM25) עם re-ranking בשני שלבים, deconfliction בין מקורות שמתנגשים, ו-embeddings זולים שמריצים מחדש כל הזמן - הכל על turbopuffer.",
+   "points": [
+    "הבעיה: במספרים פיננסיים אין סובלנות להמצאה. אותו נתון (למשל הכנסה) יכול להופיע אחרת בתמליל שיחת רווחים וב-10K - וזה לא באג אלא פיצ'ר: שני מקורות לגיטימיים שצריך ליישב ביניהם.",
+    "הארכיטקטורה זכתה ל-deep dive של Anthropic; ההרצאה מסבירה איך זה עובד בפועל עם turbopuffer כרכיב מרכזי.",
+    "שלב 1: retrieval היברידי - וקטורים + BM25 על פני ה-namespace, כדי לתפוס גם דמיון סמנטי וגם התאמות מדויקות של מונחים ומספרים.",
+    "שלב 2: reciprocal re-ranking שמחזיר בערך 60 מסמכים, ואז re-ranking נוסף לפי מקורות מהימנים יותר, עם cross-encoder שמדרג מחדש לפני שהתוצאה חוזרת למודל.",
+    "התשתית תלויה בשני דברים: היכולת להריץ embeddings מחדש בזול כשמידע חדש נכנס (מודל embeddings עצמאי יקר לתפעול), ואסטרטגיית retrieval דטרמיניסטית לצד המנגנונים הלמידים.",
+    "מבט לעתיד: העולם הולך לכיוון quantamental - שילוב של שיטות retrieval ייחודיות עם retrieval דטרמיניסטי, כדי שה-AI יעשה את העבודה שאנחנו לא רוצים לעשות."
+   ],
+   "audience": "מהנדסי RAG ו-search, בוני מוצרי AI פיננסיים שצריכים דיוק מספרי מוחלט, וכל מי שמתקשה עם הלוצינציות של מספרים בפרודקשן.",
+   "tags": [
+    "RAG",
+    "turbopuffer",
+    "פיננסים",
+    "retrieval",
+    "re-ranking",
+    "הלוצינציות"
+   ]
+  }
+ },
+ {
+  "id": "aVbRSIQO2dE",
+  "title": "Why Frontier Models Fail as Buy-Side Analysts",
+  "speaker": "Janie Gu & Suyeol Yun",
+  "org": "Google DeepMind & LinqAlpha",
+  "published_est": "2026-10-25",
+  "age_when_added": "היום",
+  "duration_sec": 1112,
+  "url": "https://www.youtube.com/watch?v=aVbRSIQO2dE",
+  "transcript": "available",
+  "added": "2026-10-25",
+  "summary_he": {
+   "tldr": "למה קשה לבנות evals לזרימות עבודה אמיתיות: Google DeepMind ו-Kaggle משתפים פעולה כדי לתקן את תחום ה-benchmarks - תשתית שבה כל ציון ניתן לביקורת, מענקים של 5 מיליון דולר, compute ומודלים בחינם, ומהנדס ליווי. מקרה הבוחן: Mandate Bench של LinqAlpha שבודק מודלים כאנליסטים פיננסיים.",
+   "points": [
+    "הבעיה: קשה לבנות evals לזרימות עבודה אמיתיות בפרודקשן. בשחזור benchmarks קיימים גילו שהציונים שלהם יצאו זהים לנייר המקורי - אבל מצאו בעיות בציון עצמו; הרבה משחזרים גם לא מקנפגים השוואה head-to-head הוגנת.",
+    "השיתוף: Google DeepMind ו-Kaggle בונים benchmarks סביב זרימות עבודה אמיתיות בעלות ערך כלכלי, בשיתוף חברות וחוקרים.",
+    "מה נותנים למי שבונה benchmark: compute והסקה ממודלים מתקדמים בחינם, 5 מיליון דולר במענקים ברבעון Q4, ומהנדס forward-deployed מ-GDM שמלווה בעיצוב ה-eval כדי שהמתודולוגיה תהיה מחמירה.",
+    "התשתית: Kaggle בונה תשתית סטנדרטית שבה כל ציון auditable, כדי לטפל בבעיות לאורך כל מחסנית התשתית.",
+    "מקרה בוחן: Mandate Bench של LinqAlpha - benchmark שמעריך מודלים כאנליסטים buy-side, והראה איפה מודלים מתקדמים נכשלים בתפקיד.",
+    "באוויר: benchmarks נוספים עם Octava, Quadrillion ו-Rehearsals על זרימות קליניות, מחקריות ו-user research. הם מחפשים שותפים נוספים."
+   ],
+   "audience": "חוקרי evals ובוני benchmarks, צוותי AI במוסדות פיננסיים, וכל חברה שרוצה benchmark לזרימת העבודה שלה (עם מענק ותמיכה).",
+   "tags": [
+    "evals",
+    "benchmarks",
+    "Kaggle",
+    "Google DeepMind",
+    "פיננסים",
+    "agents"
+   ]
+  }
  }
 ]
