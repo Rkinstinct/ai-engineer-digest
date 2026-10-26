@@ -7793,5 +7793,101 @@
     "evals"
    ]
   }
+ },
+ {
+  "id": "4UtrRVtUN_g",
+  "title": "How to Build an AI Code Review Agent",
+  "speaker": "Daksh Gupta",
+  "org": "Greptile",
+  "published_est": "2026-10-26",
+  "age_when_added": "היום",
+  "duration_sec": 1107,
+  "url": "https://www.youtube.com/watch?v=4UtrRVtUN_g",
+  "transcript": "available",
+  "added": "2026-10-26",
+  "summary_he": {
+   "tldr": "דאקש גופטה, מייסד-שותף ב-Greptile (כ-1% מכלל ה-pull requests ב-GitHub עוברים דרך סוכני ה-review שלהם), מפרט איך לבנות סוכן code review בעצמכם: sandbox עם סוכן, מערך PRs היסטוריים שגרמו לתקלות, model inversion בין מודל הכתיבה למודל הבדיקה, context מ-docs ו-tickets, ובדיקות end-to-end עם computer vision.",
+   "points": [
+    "הסקאלה שממנה מדברים: אלפי חברות משתמשות ב-Greptile מדי יום, מ-codebase ה-CUDA של Nvidia ועד ה-wallet של Coinbase. כשחברה צריכה משהו אסoteric מדי, הם עוזרים לה לבנות פתרון עצמאי בחינם - ומהלקחים האלה נולדה ההרצאה.",
+    "שלושת הדברים שצריך לשכפל כדי לבנות כלי טוב: הבנת ה-codebase (אינדוקס עמוק), הרצת הקוד בסביבת sandbox עשירה בתלויות עם בדיקות computer use, והקצאת inference חכמה - המודל והתקציב הנכונים לכל תת-משימה, ולכן יותר ביצועים לדולר מכלי פנימי.",
+    "השלב הראשון: sandbox (אפשר Firecracker) עם סוכן בתוכו. אבל באג קטסטרופלי מופיע אולי פעם ב-10,000 שורות, אז בונים מערך נתונים של PRs היסטוריים שגרמו לתקלות ובודקים באיזו תדירות הסוכן תופס אותם. חובה לרענן אותו כל הזמן: 80-90% מהבאגים חוזרים, אבל סוכני קוד מייצרים טעויות חדשות שלא ראינו.",
+    "Model inversion: לכל מודל חתימת כישלון משלו - Claude מייצר פי ~3 שגיאות off-by-one מ-GPT, ו-GPT נוטה יותר ל-auth bypass. לכן אסור לבדוק קוד עם אותו מודל שכתב אותו: קוד של Claude נבדק במודל GPT ולהפך. קל לזהות מי כתב: Codex קורא ל-branches בפורמט codex/..., Claude משאיר co-authored-by.",
+    "קוד \"נכון\" יכול להיות שגוי כי ההוראה הייתה מעורפלת: מוסיפים לסוכן גישה ל-Jira/Linear ול-Confluence/Notion, כי ידע שבט לעובדים לא קיים אצל הסוכן. Greptile מממשים את זה כ-\"wiki חי\" - מודל עולם של החברה (codebase, טלמטריה מפרודקשן, roadmap) שמזין context ומונע מהסוכן לקרוא קבצים מיותרים.",
+    "בדיקות אוטונומיות: באגי UI מתגלים רק כשמרנדרים (למשל אלמנט מוסתר באייפון). מרימים את ה-stack המלא ב-sandboxes ובודקים end-to-end עם computer vision - לדבריו, QA מקצה לקצה \"כמעט פתור\" בדור המודלים החדש. התנאים: תיעוד של כל ה-flows באפליקציה ו-build script פשוט מספיק שהסוכן יכול להריץ."
+   ],
+   "audience": "מהנדסי פלטפורמה ו-AI ששוקלים לבנות כלי review פנימי, ומי שבוחר כלי code review/validation לחברה ורוצה להבין מה מפריד בין טוב למצוין.",
+   "tags": [
+    "Greptile",
+    "code-review",
+    "agents",
+    "testing",
+    "sandbox",
+    "evals",
+    "model-inversion"
+   ]
+  }
+ },
+ {
+  "id": "Y_p3y6zP5QE",
+  "title": "Build Your Own Team of Managed Agents",
+  "speaker": "Jack Wotherspoon",
+  "org": "Google DeepMind",
+  "published_est": "2026-10-26",
+  "age_when_added": "היום",
+  "duration_sec": 1184,
+  "url": "https://www.youtube.com/watch?v=Y_p3y6zP5QE",
+  "transcript": "available",
+  "added": "2026-10-26",
+  "summary_he": {
+   "tldr": "ג'ק וות'רספון, מהנדס DevEx ב-Google DeepMind, מציג managed agents ב-Gemini API: קריאת API אחת נותנת סוכן שרץ בענן על sandbox מנוהל עם harness מובנה, כולל interactions ו-environments כפרימיטיבים נפרדים שמאפשרים לשרשר סוכנים שחולקים אותה מערכת קבצים.",
+   "points": [
+    "למה סוכן בענן ולא על הלפטופ: הוא לא גונב לכם את הדפדפן והמסך בזמן verification, לא תלוי בסביבה האישית שלכם, וניתן לשיתוף והטמעה באפליקציה - scale מקבלים פשוט ביותר קריאות API, בלי לנהל containers, רשתות ו-firewalls.",
+    "שני הפרימיטיבים המרכזיים: interactions מנהלות את מצב השיחה (מעבירים interaction ID לתור הבא), ו-environments הן מצב מערכת הקבצים של ה-sandbox. ההפרדה מאפשרת תרחיש multi-agent: סוכן אחד שומר קובץ, והסוכן הבא נכנס עם חלון context נקי אבל לאותה environment בדיוק.",
+    "כלים מובנים ב-sandbox: הרצת קוד, קריאת/כתיבת קבצים ו-Google Search. אפשר לחבר שרתי MCP משלכם, לעלות קבצי agents.md ו-skills (אותם playbooks מהמחשב האישי, אבל בענן), לחבר repo מ-GitHub, ולשמור סוכנים מלוטשים דרך agents API כדי לקרוא להם שוב ושוב.",
+    "דמו של שרשרת שלושה סוכנים על אותה environment: סוכן מחקר ששולף דוחות SEC של Nvidia ושומר metrics.json, סוכן quant שמריץ עליו ניתוח פיננסי ב-Python, וסוכן שלישי שהופך את הכל לדוח - עם step traces מלאים לכל פעולה, ואפשרות לחבר Google Docs או Slack דרך MCP.",
+    "דמו נוסף: אפליקציה שמחוברת ל-Google Drive עם קבלות ובונה דוח אינטראקטיבי, ו-ticker agent שמריץ כמה managed agents במקביל לניתוח מניה. נקודת הפתיחה: AI Studio בחינם, ותיעוד ה-managed agents."
+   ],
+   "audience": "מפתחים שרוצים להריץ סוכני קוד/מחקר בענן בלי לנהל תשתית, ובוני אפליקציות שרוצים להטמיע סוכנים כשירות דרך API.",
+   "tags": [
+    "Google DeepMind",
+    "Gemini",
+    "managed-agents",
+    "sandbox",
+    "multi-agent",
+    "MCP"
+   ]
+  }
+ },
+ {
+  "id": "OmyqelTwpOo",
+  "title": "How to Build Voice Agents That Don't Fall Apart When You Interrupt",
+  "speaker": "Jesse Hall",
+  "org": "LiveKit",
+  "published_est": "2026-10-26",
+  "age_when_added": "היום",
+  "duration_sec": 1255,
+  "url": "https://www.youtube.com/watch?v=OmyqelTwpOo",
+  "transcript": "available",
+  "added": "2026-10-26",
+  "summary_he": {
+   "tldr": "ג'סי הול מ-LiveKit (הפריימוורק שהפעיל את ה-advanced voice mode של ChatGPT) על מה שהופך סוכן קולי לאנושי: tool calls אסינכרוניים שלא חוסמים את השיחה, turn detection שמקשיב לאודיו ולא רק לטקסט, ובדיקות עם מתקשרים מדומים ובנצ'מרק אישי לבחירת מודל.",
+   "points": [
+    "סוכן ריאל-טיים שופט לפי סטנדרט אחר מסוכן רקע: כשלקוח מפסיק אותו באמצע משפט או משנה סכום תשלום באמצע שיחה, השיחה מתפרקת - והלקוח לוחץ 0 למעביר אנושי. Latency חשוב אבל הוא רק חלק מהמשוואה; המטרה היא human-like.",
+    "הטריק המרכזי (שורת קוד אחת): tool call אסינכרוני שלא חוסם את השיחה. הסוכן ממשיך לדבר בזמן שה-backend שומר נתונים (\"שניה, אני בודק את זה\"), מתקן את עצמו אם חזרה שגיאה, ובמקרה קיצון מעביר לאדם. בדמו של הזמנת מלון עם interruptions רצים - השיחה לא נשברה.",
+    "Turn detection: ה-detector של LiveKit מקשיב לאודיו עצמו - קצב, גובה, אינטונציה - ולא רק לתמליל. לפי המספרים שפרסמו, האלטרנטיבה המובילה קוטעת משתמשים 9.9% מהזמן לעומת 4.5% אצלם.",
+    "טסטים: מתקשרים מדומים שרודפים מטרות, משנים דעתם, מפסיקים וממלמלים, עם רעש רקע. סימולציות טקסט בודקות לוגיקה עסקית וסימולציות אודיו בודקות את כל ה-pipeline (זיהוי דיבור, תורות). הניקוד בודק גם תוצאה וגם דרך: 10 צעדים במקום 2 או function call מהולל = כשל, כי סוכנים יודעים \"לגיימ\" השלמות.",
+    "בנצ'מרק אישי למודלים: מחליפים מודלים על אותו סוכן ואותם תרחישים עם קלט זהה בית-לבית, ומריצים בלופ. התשובה מפתיעה - המודל שעונה הכי מהר ונכון ל-use case שלכם לא בהכרח מוביל את ה-leaderboard. אצלם ניצח Gemma 4 31B על LiveKit inference (אותו מודל היה איטי יותר אצל ספק אחר).",
+    "המסקנה אחת לזכור: סוכן קולי הוא לא צ'אטבוט עם רמקול מחובר - זו מערכת ריאל-טיים שצריכה להגיב כמו בן אדם, וככה גם צריך להעריך אותה."
+   ],
+   "audience": "בוני סוכנים קוליים לפרודקשן, במיוחד לשירותים רגישים כמו פיננסים, ומי שבוחר מודלים ותשתית ל-workloads קוליים בזמן אמת.",
+   "tags": [
+    "LiveKit",
+    "voice-agents",
+    "real-time",
+    "turn-detection",
+    "evals",
+    "open-source"
+   ]
+  }
  }
 ]
