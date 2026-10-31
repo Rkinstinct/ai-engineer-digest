@@ -8810,5 +8810,39 @@
     "human review"
    ]
   }
+ },
+ {
+  "id": "1_lX0m64-aI",
+  "title": "Everyone Has the Same AI Models. Here's What Sets Agents Apart",
+  "speaker": "Richmond Alake",
+  "org": "Oracle",
+  "published_est": "2026-10-31",
+  "age_when_added": "היום",
+  "duration_sec": 1547,
+  "url": "https://www.youtube.com/watch?v=1_lX0m64-aI",
+  "transcript": "available",
+  "added": "2026-10-31",
+  "summary_he": {
+   "tldr": "ריצ'מונד אלקה מ-Oracle: לכולם יש גישה לאותם מודלים ולאותה אינפורמציה - אבל מידע הוא לא אינטליגנציה. אחרי עידן הפרומפטים, עידן הקונטקסט ועידן ה-control plane, ההבדל התחרותי הבא הוא ה-intelligence plane: השכבה שמחברת ידע, זיכרון, הרשאות דאטה ולמידה מתמשכת, וחותכת את כל מחסנית הסוכן. (ההרצאה עמוסה במוצרי Oracle - המספרים מהדמו מיוחסים לדובר.)",
+   "points": [
+    "הסיפור המסגרת: 'AF is Midway' במלחמת העולם השנייה. לצוות הפענוח בפרל הארבור (Station Hypo) ולוושינגטון הייתה אותה אינפורמציה מיירטת - אבל הצוות הקטן במרתף, עם חודשים של רשומות מצטברות (בעצם: זיכרון), הגיע לפרשנות הנכונה. לכולם בחדר יש אותם מודלים; זה לא היתרון.",
+    "ארבעת ה-R של זיכרון סוכן: retain, reuse, recall, refine. הטקסונומיה: קצר/ארוך-טווח, ובפונקציה קוגניטיבית - סמנטי, אפיזודי, פרוצדורלי ו-working memory. (בשנה שעברה, אומר הדובר, אף אחד לא הכיר את המונח - השנה כולם מרימים יד.)",
+    "מה-control plane ל-intelligence plane: control plane = ממשל מרכזי - זהות, policy, guardrails, תזמור והרשאות, auditing. ה-intelligence plane חותך את כל ה-stack ומכיל ארבעה דברים: מה הסוכן צריך לדעת (ידע), מה הוא צריך לזכור (זיכרון), מה מותר לו לראות (governance וגישת דאטה), ואיך הוא משתפר (למידה מתמשכת). הרעיון עצמו לא חדש - מקביל ל-knowledge plane שהוצע ברשתות מעל ה-management plane.",
+    "ארכיטקטורת הייחוס שלו: agent runtime, מעליו memory manager על data platform, הזרמות זיכרון (traces) נאספות ונכנסות ללולאת continual learning שמחזירה מודלים משופרים ל-runtime. מעל הכל: data plane, control plane, intelligence plane.",
+    "decision models כנקודת שינוי: הופעתם שינתה את הדרך לחשוב על המערכת - אפשר לשתול מודלים קטנים לאורך כל הפייפליין (routing, retrieval) ולשאול 'מה כאן אפשר להחליף ב-decision model'.",
+    "הדמו (מוקלט, מספרים של הדובר): 'governed analyst' מול 'naive analyst' על אותן שאלות - לטענתו 99% דיוק עם כ-32K טוקנים מול כ-200K אצל הנאיבי, בתוספת guardrails ו-prompt caching. שכבת האונטולוגיה ענתה נכון על 'counterparty' ושכבת הסמנטיקה על 'concentration' שם המילולי/נאיבי טעה - פער של אחוזים בודדים שבעבודה פיננסית קריטית יכול להיות ההפרש בין קנס של 100 מיליון דולר לבין עבודה תקינה.",
+    "מיפוי המוצרים של Oracle (מכירתי, לייחס): Agent Memory כחבילת Python שמייצרת context cards; Deep Data Security - הסוכן יורש את הרשאות השורה של המשתמש שמפיו הוא פועל, מופגשות לתוך שכבת הדאטה; Private AI service container לאינפרנס on-prem (embeddings, LLM, rerankers) או Oracle Cloud; Private Agent Factory - פלטפורמת no-code על Oracle AI Database.",
+    "הדמו השני - 'Memories', כלי open-source שהוא בנה: fine-tuning של decision model קטן ל-memory routing (לנתב פלט לזיכרון שיחה מול זיכרון workflow), עם דאטה שנאסף מהשיחות שלו עם הסוכן. לטענתו, routing, embeddings ו-reranking הם הפירות הנמוכים ביותר להתחיל מהם: אוספים traces, מפרמטים, מאמנים מחדש - ומרוויחים איכות ולעיתים latency.",
+    "הקריאה המעשית: תתייחסו לזיכרון כמו לדאטה, רשמו entities והגדרות, דחפו entitlements לשכבת הדאטה, תפסו traces של זיכרון - זה דאטה האימון של מחר. 'הזיכרון הוא ה-moat - תהיו הבעלים שלו'."
+   ],
+   "audience": "מהנדסי סוכנים שכבר מיישמים זיכרון בסיסי ורוצים מסגרת חשיבה לשלב הבא - למידה מתמשכת, סמנטיקה ואונטולוגיה - ומי שבונה במרחב פיננסי/מפוקח שבו הרשאות דאטה הן חלק מהמוצר.",
+   "tags": [
+    "זיכרון סוכנים",
+    "Oracle",
+    "ארכיטקטורה",
+    "continual learning",
+    "decision models"
+   ]
+  }
  }
 ]
