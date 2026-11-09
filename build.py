@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reads lectures.json and writes index.html (static, Hebrew RTL).
 Run: python3 build.py"""
-import json, html, collections
+import json, html, collections, glob
 CH = "https://www.youtube.com/@aiDotEngineer"
 css = open('base.css').read() + """
 .lec{background:var(--card,#111317);border:1px solid #24282f;border-radius:16px;padding:20px;margin:16px 0}
@@ -13,6 +13,12 @@ css = open('base.css').read() + """
 .toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}.toc a{border:1px solid #24282f;border-radius:999px;padding:6px 14px;font-size:.85rem;color:#9aa0a8;text-decoration:none}
 """
 L = json.load(open('lectures.json'))
+seen = {x['id'] for x in L}
+for filename in sorted(glob.glob('lectures-*.json')):
+    for x in json.load(open(filename)):
+        if x['id'] not in seen:
+            L.append(x)
+            seen.add(x['id'])
 L.sort(key=lambda x: (x['published_est'], x['added']), reverse=True)
 HEB = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר']
 def dlabel(d):
@@ -37,7 +43,7 @@ for d, items in groups.items():
     body.append(f'<section class="section" id="d{d}"><div class="wrap"><h2 class="daytitle">{dlabel(d)} <span class="note">(תאריך משוער)</span></h2>{"".join(cards)}</div></section>')
 n = len(L)
 page = f'''<!DOCTYPE html>
-<html dir="rtl" lang="he"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#030304" name="theme-color"/><meta content="סיכומים בעברית של ההרצאות בערוץ AI Engineer" name="description"/><title>AI Engineer בעברית | DATA&amp;AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/><style>{css}</style></head><body>
+<html dir="rtl" lang="he"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#030304" name="theme-color"/><meta content="סיכומים בעברית של ההרצאות בערוץ AI Engineer" name="description"/><title>AI Engineer בעברית | DATA&amp;AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/><style>{css}</style><script defer src="updates.js"></script></head><body>
 <header class="top"><div class="wrap"><a class="brand" href="https://rkinstinct.github.io/data-ai-hub/">DATA<span style="color:#F7931A">&amp;</span>AI <b>/ AI Engineer</b></a></div></header>
 <main id="main"><div class="hero"><div class="wrap"><div class="eyebrow">AI ENGINEER · סיכומי הרצאות</div><h1>AI Engineer בעברית</h1>
 <p class="lead">סיכום בעברית של כל הרצאה שעולה לערוץ <a href="{CH}" rel="noopener" target="_blank" style="color:#F7931A">AI Engineer</a> ביוטיוב. כל סיכום נכתב מהתמלול של ההרצאה עצמה, מהחדשות לישנות, וקישור למקור מצורף לכל הרצאה.</p>
