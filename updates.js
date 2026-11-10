@@ -1,6 +1,6 @@
 /* Supplemental transcript-based cards. Existing cards remain in the HTML. */
 (async function () {
-  const files = ['lectures-2026-11-extra.json'];
+  const files = ['lectures-2026-11-extra.json', 'lectures-2026-11-extra2.json'];
   const escape = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const months = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
   const label = d => {const [y,m,day]=d.split('-'); return `${Number(day)} ב${months[Number(m)-1]} ${y}`;};
